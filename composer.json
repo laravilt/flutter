@@ -1,0 +1,19 @@
+{
+    "name": "laravilt/flutter",
+    "description": "Flutter serialization and widget generation for Laravilt",
+    "keywords": ["laravel", "laravilt", "flutter", "mobile"],
+    "type": "library",
+    "license": "MIT",
+    "autoload": {
+        "psr-4": {
+            "Laravilt\\Flutter\\": "src/"
+        }
+    },
+    "require": {
+        "php": "^8.2",
+        "illuminate/support": "^11.0|^12.0",
+        "laravilt/support": "@dev"
+    },
+    "minimum-stability": "dev",
+    "prefer-stable": true
+}
