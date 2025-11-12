@@ -2,17 +2,59 @@
     "name": "laravilt/flutter",
     "description": "Flutter serialization and widget generation for Laravilt",
     "keywords": ["laravel", "laravilt", "flutter", "mobile"],
+    "homepage": "https://github.com/laravilt/flutter",
     "type": "library",
     "license": "MIT",
+    "authors": [
+        {
+            "name": "Fady Mondy",
+            "email": "fadymondy@example.com",
+            "role": "Developer"
+        }
+    ],
+    "require": {
+        "php": "^8.2",
+        "illuminate/contracts": "^11.0|^12.0",
+        "laravilt/support": "@dev"
+    },
+    "require-dev": {
+        "laravel/pint": "^1.24",
+        "larastan/larastan": "^3.0",
+        "nunomaduro/collision": "^8.0",
+        "orchestra/testbench": "^9.0",
+        "pestphp/pest": "^4.0",
+        "pestphp/pest-plugin-laravel": "^4.0",
+        "phpstan/phpstan": "^2.0"
+    },
     "autoload": {
         "psr-4": {
             "Laravilt\\Flutter\\": "src/"
         }
     },
-    "require": {
-        "php": "^8.2",
-        "illuminate/support": "^11.0|^12.0",
-        "laravilt/support": "@dev"
+    "autoload-dev": {
+        "psr-4": {
+            "Laravilt\\Flutter\\Tests\\": "tests/"
+        }
+    },
+    "scripts": {
+        "test": "vendor/bin/pest",
+        "test:coverage": "vendor/bin/pest --coverage",
+        "test:types": "vendor/bin/phpstan analyse --memory-limit=2G",
+        "test:style": "vendor/bin/pint --test",
+        "format": "vendor/bin/pint"
+    },
+    "config": {
+        "sort-packages": true,
+        "allow-plugins": {
+            "pestphp/pest-plugin": true
+        }
+    },
+    "extra": {
+        "laravel": {
+            "providers": [
+                "Laravilt\\Flutter\\FlutterServiceProvider"
+            ]
+        }
     },
     "minimum-stability": "dev",
     "prefer-stable": true
